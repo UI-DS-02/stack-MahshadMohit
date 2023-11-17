@@ -103,6 +103,23 @@ class LinkedStack<E> implements stack<E>{
 }
 
 public class Calculator {
+    public static double calculate(String input){
+        return 1;
+    }
+    public static int olaviat(char c){
+        switch (c){
+            case '+':
+            case '-' :
+                return 1;
+            case '*':
+            case '/':
+                return 2;
+            case '^' :
+            case '!' :
+                return 3;
+        }
+        return -1;
+    }
     public static boolean isOperator(char c){
         return c == '+' || c == '-' || c == '/' || c == '^' || c == '!';
     }
