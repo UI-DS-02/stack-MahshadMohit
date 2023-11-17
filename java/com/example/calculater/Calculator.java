@@ -103,5 +103,40 @@ class LinkedStack<E> implements stack<E>{
 }
 
 public class Calculator {
-
+    public static boolean isOperator(char c){
+        return c == '+' || c == '-' || c == '/' || c == '^' || c == '!';
+    }
+    public static double applyOperator(char ope , double b , double a){
+        switch (ope) {
+            case '+' -> {
+                return a + b;
+            }
+            case '-' -> {
+                return a - b;
+            }
+            case '*' -> {
+                return a * b;
+            }
+            case '/' -> {
+                if (b == 0)
+                    throw new ArithmeticException("error : divided by zero");
+                return a / b;
+            }
+            case '^' -> {
+                return Math.pow(a, b);
+            }
+            case '!' -> {
+                if (a < 0)
+                    throw new ArithmeticException("error");
+                return factorial(a);
+            }
+        }
+        throw new IllegalArgumentException("error");
+    }
+    public static double factorial(double n){
+        if(n==0)
+            return 1;
+        else
+            return n*factorial(n-1);
+    }
 }
