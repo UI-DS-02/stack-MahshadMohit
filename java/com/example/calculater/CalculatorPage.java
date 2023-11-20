@@ -132,7 +132,7 @@ public class CalculatorPage {
         dropShadow.setColor(Color.web("#499c91",1));
         dropShadow.setHeight(21);
         dropShadow.setWidth(21);
-        dropShadow.setRadius(10);
+        dropShadow.setRadius(15);
         one.setEffect(dropShadow);
     }
     @FXML
@@ -142,7 +142,7 @@ public class CalculatorPage {
         dropShadow.setColor(Color.web("#499c91",1));
         dropShadow.setHeight(21);
         dropShadow.setWidth(21);
-        dropShadow.setRadius(10);
+        dropShadow.setRadius(15);
         clear.setEffect(dropShadow);
     }
     @FXML
@@ -162,7 +162,7 @@ public class CalculatorPage {
         dropShadow.setColor(Color.web("#499c91",1));
         dropShadow.setHeight(21);
         dropShadow.setWidth(21);
-        dropShadow.setRadius(10);
+        dropShadow.setRadius(15);
         sub.setEffect(dropShadow);
     }
     @FXML
@@ -172,7 +172,7 @@ public class CalculatorPage {
         dropShadow.setColor(Color.web("#499c91",1));
         dropShadow.setHeight(21);
         dropShadow.setWidth(21);
-        dropShadow.setRadius(10);
+        dropShadow.setRadius(15);
         divide.setEffect(dropShadow);
     }
     @FXML
@@ -182,7 +182,7 @@ public class CalculatorPage {
         dropShadow.setColor(Color.web("#499c91",1));
         dropShadow.setHeight(21);
         dropShadow.setWidth(21);
-        dropShadow.setRadius(10);
+        dropShadow.setRadius(15);
         two.setEffect(dropShadow);
     }
     @FXML
@@ -192,7 +192,7 @@ public class CalculatorPage {
         dropShadow.setColor(Color.web("#499c91",1));
         dropShadow.setHeight(21);
         dropShadow.setWidth(21);
-        dropShadow.setRadius(10);
+        dropShadow.setRadius(15);
         three.setEffect(dropShadow);
     }
     @FXML
@@ -202,7 +202,7 @@ public class CalculatorPage {
         dropShadow.setColor(Color.web("#499c91",1));
         dropShadow.setHeight(21);
         dropShadow.setWidth(21);
-        dropShadow.setRadius(10);
+        dropShadow.setRadius(15);
         four.setEffect(dropShadow);
     }
     @FXML
@@ -212,7 +212,7 @@ public class CalculatorPage {
         dropShadow.setColor(Color.web("#499c91",1));
         dropShadow.setHeight(21);
         dropShadow.setWidth(21);
-        dropShadow.setRadius(10);
+        dropShadow.setRadius(15);
         five.setEffect(dropShadow);
     }
     @FXML
@@ -222,7 +222,7 @@ public class CalculatorPage {
         dropShadow.setColor(Color.web("#499c91",1));
         dropShadow.setHeight(21);
         dropShadow.setWidth(21);
-        dropShadow.setRadius(10);
+        dropShadow.setRadius(15);
         six.setEffect(dropShadow);
     }
     @FXML
@@ -232,7 +232,7 @@ public class CalculatorPage {
         dropShadow.setColor(Color.web("#499c91",1));
         dropShadow.setHeight(21);
         dropShadow.setWidth(21);
-        dropShadow.setRadius(10);
+        dropShadow.setRadius(15);
         seven.setEffect(dropShadow);
     }
     @FXML
@@ -242,7 +242,7 @@ public class CalculatorPage {
         dropShadow.setColor(Color.web("#499c91",1));
         dropShadow.setHeight(21);
         dropShadow.setWidth(21);
-        dropShadow.setRadius(10);
+        dropShadow.setRadius(15);
         eight.setEffect(dropShadow);
     }
     @FXML
@@ -252,7 +252,7 @@ public class CalculatorPage {
         dropShadow.setColor(Color.web("#499c91",1));
         dropShadow.setHeight(21);
         dropShadow.setWidth(21);
-        dropShadow.setRadius(10);
+        dropShadow.setRadius(15);
         nine.setEffect(dropShadow);
     }
     @FXML
@@ -262,7 +262,7 @@ public class CalculatorPage {
         dropShadow.setColor(Color.web("#499c91",1));
         dropShadow.setHeight(21);
         dropShadow.setWidth(21);
-        dropShadow.setRadius(10);
+        dropShadow.setRadius(15);
         pow.setEffect(dropShadow);
     }
     @FXML
@@ -272,7 +272,7 @@ public class CalculatorPage {
         dropShadow.setColor(Color.web("#499c91",1));
         dropShadow.setHeight(21);
         dropShadow.setWidth(21);
-        dropShadow.setRadius(10);
+        dropShadow.setRadius(15);
         zarb.setEffect(dropShadow);
     }
     @FXML
@@ -282,7 +282,7 @@ public class CalculatorPage {
         dropShadow.setColor(Color.RED);
         dropShadow.setHeight(21);
         dropShadow.setWidth(21);
-        dropShadow.setRadius(10);
+        dropShadow.setRadius(15);
         mosavi.setEffect(dropShadow);
     }
     @FXML
@@ -292,7 +292,7 @@ public class CalculatorPage {
         dropShadow.setColor(Color.web("#499c91",1));
         dropShadow.setHeight(21);
         dropShadow.setWidth(21);
-        dropShadow.setRadius(10);
+        dropShadow.setRadius(15);
         zero.setEffect(dropShadow);
     }
     @FXML
@@ -302,7 +302,7 @@ public class CalculatorPage {
         dropShadow.setColor(Color.web("#499c91",1));
         dropShadow.setHeight(21);
         dropShadow.setWidth(21);
-        dropShadow.setRadius(10);
+        dropShadow.setRadius(15);
         momayez.setEffect(dropShadow);
     }
     @FXML
@@ -312,7 +312,7 @@ public class CalculatorPage {
         dropShadow.setColor(Color.web("#499c91",1));
         dropShadow.setHeight(21);
         dropShadow.setWidth(21);
-        dropShadow.setRadius(10);
+        dropShadow.setRadius(15);
         factorial.setEffect(dropShadow);
     }
     @FXML
@@ -322,7 +322,7 @@ public class CalculatorPage {
         dropShadow.setColor(Color.web("#499c91",1));
         dropShadow.setHeight(21);
         dropShadow.setWidth(21);
-        dropShadow.setRadius(10);
+        dropShadow.setRadius(15);
         history.setEffect(dropShadow);
     }
 
