@@ -223,5 +223,35 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
+      <Rectangle fx:id="history1" arcHeight="5.0" arcWidth="5.0" fill="#272b33" height="23.0" layoutX="170.0" layoutY="484.0" onMouseClicked="#hMouse" onMouseEntered="#lightH" onMouseExited="#offHistory" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-arc-height: 35; -fx-arc-width: 25;" width="78.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Rectangle>
+      <Text fill="WHITE" layoutX="197.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="del">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Rectangle fx:id="history11" arcHeight="5.0" arcWidth="5.0" fill="#272b33" height="23.0" layoutX="87.0" layoutY="484.0" onMouseClicked="#hMouse" onMouseEntered="#lightH" onMouseExited="#offHistory" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-arc-height: 35; -fx-arc-width: 25;" width="45.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Rectangle>
+      <Text fill="WHITE" layoutX="102.0" layoutY="499.0" strokeType="OUTSIDE" strokeWidth="0.0" text=")">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Rectangle fx:id="history12" arcHeight="5.0" arcWidth="5.0" fill="#272b33" height="23.0" layoutX="39.0" layoutY="484.0" onMouseClicked="#hMouse" onMouseEntered="#lightH" onMouseExited="#offHistory" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-arc-height: 35; -fx-arc-width: 25;" width="45.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Rectangle>
+      <Text fill="WHITE" layoutX="54.0" layoutY="499.0" strokeType="OUTSIDE" strokeWidth="0.0" text="(">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

@@ -126,10 +126,9 @@ class LinkedStack<E> implements stack<E> {
 }
 
 public class Calculator {
-    public static double calculate(String input) {
+    public static double calculate(String input)  {
         LinkedStack<Double> numbers = new LinkedStack<>();
         LinkedStack<Character> operators = new LinkedStack<>();
-
         for (int i = 0; i < input.length(); i++) {
             char c = input.charAt(i);
             if (Character.isDigit(c) || c == '.') {
@@ -154,6 +153,7 @@ public class Calculator {
                 operators.push(c);
             }
         }
+
 
         while (!operators.isEmpty()) {
             numbers.push(applyOperator(operators.pop(), numbers.pop(), numbers.pop()));
@@ -193,28 +193,22 @@ public class Calculator {
 
     public static double applyOperator(char ope, double b, double a) {
         switch (ope) {
-            case '+' -> {
+            case '+':
                 return a + b;
-            }
-            case '-' -> {
+            case '-':
                 return a - b;
-            }
-            case '*' -> {
+            case '*':
                 return a * b;
-            }
-            case '/' -> {
+            case '/':
                 if (b == 0)
                     throw new ArithmeticException("error : divided by zero");
                 return a / b;
-            }
-            case '^' -> {
+            case '^':
                 return Math.pow(a, b);
-            }
-            case '!' -> {
+            case '!':
                 if (a < 0)
                     throw new ArithmeticException("error");
                 return factorial(a);
-            }
         }
         throw new IllegalArgumentException("error");
     }

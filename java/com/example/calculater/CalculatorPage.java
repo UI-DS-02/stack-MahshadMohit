@@ -98,8 +98,13 @@ public class CalculatorPage {
     }
 
     @FXML
-    void equalMouse(MouseEvent event) {
+    void equalMouse(MouseEvent event) throws Exception {
         javab.setText(String.valueOf(Calculator.calculate(sb.toString())));
+        SqlConnector sql =  new SqlConnector();
+        String sqlCom = String.format("INSERT INTO calculator (input , output) VALUES ('%s','%s')",sb.toString(),String.valueOf(Calculator.calculate(sb.toString())));
+        sql.ExecuteSQL(sqlCom);
+        String sqlCmd = "Select * FROM calculator";
+        sql.showDatabase(sqlCmd);
     }
 
     @FXML
