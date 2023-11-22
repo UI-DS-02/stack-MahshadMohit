@@ -127,8 +127,8 @@ class LinkedStack<E> implements stack<E> {
 
 public class Calculator {
     public static double calculate(String input)  {
-        LinkedStack<Double> numbers = new LinkedStack<>();
-        LinkedStack<Character> operators = new LinkedStack<>();
+        Stack<Double> numbers = new Stack<>();
+        Stack<Character> operators = new Stack<>();
         for (int i = 0; i < input.length(); i++) {
             char c = input.charAt(i);
             if (Character.isDigit(c) || c == '.') {
@@ -142,38 +142,32 @@ public class Calculator {
             } else if (c == '(') {
                 operators.push(c);
             } else if (c == ')') {
-                while (!operators.isEmpty() && operators.top() != '(') {
+                while (!operators.isEmpty() && operators.peek() != '(') {
                     numbers.push(applyOperator(operators.pop(), numbers.pop(), numbers.pop()));
                 }
                 operators.pop();
             } else if (isOperator(c)) {
-                while (!operators.isEmpty() && checkOlaviat(c, operators.top())) {
+                while (!operators.isEmpty() && hasPrecedence(c, operators.peek())) {
                     numbers.push(applyOperator(operators.pop(), numbers.pop(), numbers.pop()));
                 }
                 operators.push(c);
             }
         }
 
-
         while (!operators.isEmpty()) {
             numbers.push(applyOperator(operators.pop(), numbers.pop(), numbers.pop()));
         }
 
+
         return numbers.pop();
     }
 
-    public static boolean checkOlaviat(char c1, char c2) {
-        int p1 = olaviat(c1);
-        int p2 = olaviat(c2);
-
-        if ((p1 == '^' || p1 == '!') && p1 <= p2) {
-            return false;
-        }
-        return p1 <= p2;
+    public static boolean isOperator(char c) {
+        return c == '+' || c == '-' || c == '*' || c == '/' || c == '^' || c == '!';
     }
 
-    public static int olaviat(char c) {
-        switch (c) {
+    public static int getPrecedence(char op) {
+        switch (op) {
             case '+':
             case '-':
                 return 1;
@@ -187,30 +181,42 @@ public class Calculator {
         return -1;
     }
 
-    public static boolean isOperator(char c) {
-        return c == '+' || c == '-' || c == '/' || c == '^' || c == '!';
+    public static boolean hasPrecedence(char op1, char op2) {
+        int precedence1 = getPrecedence(op1);
+        int precedence2 = getPrecedence(op2);
+
+        if ((op1 == '^' || op1 == '!') && precedence1 <= precedence2)
+            return false;
+
+        return precedence1 <= precedence2;
     }
 
-    public static double applyOperator(char ope, double b, double a) {
-        switch (ope) {
-            case '+':
+    public static double applyOperator(char operator, double b, double a) {
+        switch (operator) {
+            case '+' -> {
                 return a + b;
-            case '-':
+            }
+            case '-' -> {
                 return a - b;
-            case '*':
+            }
+            case '*' -> {
                 return a * b;
-            case '/':
+            }
+            case '/' -> {
                 if (b == 0)
-                    throw new ArithmeticException("error : divided by zero");
+                    throw new ArithmeticException("Division by zero");
                 return a / b;
-            case '^':
+            }
+            case '^' -> {
                 return Math.pow(a, b);
-            case '!':
+            }
+            case '!' -> {
                 if (a < 0)
-                    throw new ArithmeticException("error");
+                    throw new ArithmeticException("Factorial of negative number");
                 return factorial(a);
+            }
         }
-        throw new IllegalArgumentException("error");
+        throw new IllegalArgumentException("Invalid operator");
     }
 
     public static double factorial(double n) {

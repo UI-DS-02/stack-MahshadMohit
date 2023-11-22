@@ -25,6 +25,7 @@ public class SqlConnector {
             ResultSet resultSet = s.executeQuery(sqlCmd);
             while(resultSet.next()){
                 System.out.println(resultSet.getString("input"));
+                System.out.println(resultSet.getString("output"));
             }
 
             con.close();
@@ -33,6 +34,28 @@ public class SqlConnector {
             e.printStackTrace();
         }
     }
+
+    String printDatabase(String sqlCmd) {
+        StringBuilder str = new StringBuilder();
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(URL, username, password);
+            Statement s = con.prepareStatement(sqlCmd);
+            ResultSet resultSet = s.executeQuery(sqlCmd);
+            while(resultSet.next()){
+                str.append(resultSet.getString("input")).append("\n");
+                str.append(resultSet.getString("output")).append("\n");
+            }
+
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return str.toString();
+    }
+
+
 
 
 }

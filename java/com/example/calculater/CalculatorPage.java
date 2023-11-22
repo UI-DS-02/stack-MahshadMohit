@@ -1,6 +1,10 @@
 package com.example.calculater;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.effect.Effect;
@@ -8,6 +12,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class CalculatorPage {
 
@@ -54,6 +61,9 @@ public class CalculatorPage {
     private Rectangle pow;
 
     @FXML
+    private Rectangle historyPage;
+
+    @FXML
     private Rectangle seven;
 
     @FXML
@@ -76,6 +86,12 @@ public class CalculatorPage {
 
     @FXML
     private Rectangle zero;
+    @FXML
+    private Rectangle parClose;
+    @FXML
+    private Rectangle parOpen;
+    @FXML
+    private Rectangle del;
     public static StringBuilder sb = new StringBuilder();
 
     @FXML
@@ -88,6 +104,21 @@ public class CalculatorPage {
     @FXML
     void dMouse(MouseEvent event) {
         sb.append("/");
+        mohasebat.setText(String.valueOf(sb));
+    }
+    @FXML
+    void closeMouse(MouseEvent e){
+        sb.append(")");
+        mohasebat.setText(String.valueOf(sb));
+    }
+    @FXML
+    void openMouse(MouseEvent e){
+        sb.append("(");
+        mohasebat.setText(String.valueOf(sb));
+    }
+    @FXML
+    void delMouse(MouseEvent e){
+        sb.deleteCharAt(sb.length()-1);
         mohasebat.setText(String.valueOf(sb));
     }
 
@@ -104,7 +135,7 @@ public class CalculatorPage {
         String sqlCom = String.format("INSERT INTO calculator (input , output) VALUES ('%s','%s')",sb.toString(),String.valueOf(Calculator.calculate(sb.toString())));
         sql.ExecuteSQL(sqlCom);
         String sqlCmd = "Select * FROM calculator";
-        sql.showDatabase(sqlCmd);
+        //sql.showDatabase(sqlCmd);
     }
 
     @FXML
@@ -139,6 +170,36 @@ public class CalculatorPage {
         dropShadow.setWidth(21);
         dropShadow.setRadius(15);
         one.setEffect(dropShadow);
+    }
+    @FXML
+    void lightOpen(MouseEvent e){
+        DropShadow dropShadow = new DropShadow();
+        dropShadow.setBlurType(BlurType.GAUSSIAN);
+        dropShadow.setColor(Color.web("#499c91",1));
+        dropShadow.setHeight(21);
+        dropShadow.setWidth(21);
+        dropShadow.setRadius(15);
+        parOpen.setEffect(dropShadow);
+    }
+    @FXML
+    void lightClose(MouseEvent e){
+        DropShadow dropShadow = new DropShadow();
+        dropShadow.setBlurType(BlurType.GAUSSIAN);
+        dropShadow.setColor(Color.web("#499c91",1));
+        dropShadow.setHeight(21);
+        dropShadow.setWidth(21);
+        dropShadow.setRadius(15);
+        parClose.setEffect(dropShadow);
+    }
+    @FXML
+    void lightDel(MouseEvent e){
+        DropShadow dropShadow = new DropShadow();
+        dropShadow.setBlurType(BlurType.GAUSSIAN);
+        dropShadow.setColor(Color.web("#499c91",1));
+        dropShadow.setHeight(21);
+        dropShadow.setWidth(21);
+        dropShadow.setRadius(15);
+        del.setEffect(dropShadow);
     }
     @FXML
     void lightClear(MouseEvent event){
@@ -484,5 +545,18 @@ public class CalculatorPage {
     @FXML
     void offHistory(MouseEvent e){
         history.setEffect(null);
+    }
+    @FXML
+    void offClose(MouseEvent e){parClose.setEffect(null);}
+    @FXML
+    void offOpen(MouseEvent e){parOpen.setEffect(null);}
+    @FXML
+    void offDel(MouseEvent e){del.setEffect(null);}
+    public void setHistoryPage(MouseEvent e) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("historyMainPage.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 }
