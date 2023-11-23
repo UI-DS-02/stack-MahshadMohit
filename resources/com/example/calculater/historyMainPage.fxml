@@ -43,10 +43,20 @@
             </AnchorPane>
          </content>
       </ScrollPane>
-      <Button fx:id="clear" layoutX="129.0" layoutY="458.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="78.0" style="-fx-background-color: #3b414f;" onMouseClicked="#setClear" text="CLEAR" textFill="#ccc0c0">
+      <Button fx:id="clear" layoutX="129.0" layoutY="458.0" mnemonicParsing="false" onMouseClicked="#setClear" prefHeight="23.0" prefWidth="78.0" style="-fx-background-color: #3b414f;" text="CLEAR" textFill="#ccc0c0">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
+      <Rectangle fx:id="graphPage" arcHeight="5.0" arcWidth="5.0" fill="#606a8091" height="44.0" layoutX="176.0" layoutY="-15.0" onMouseClicked="#setGraphPage" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-arc-height: 35; -fx-arc-width: 25;" width="78.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Rectangle>
+      <Text fill="WHITE" layoutX="190.0" layoutY="19.0" opacity="0.57" strokeType="OUTSIDE" strokeWidth="0.0" text="Graph">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

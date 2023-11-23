@@ -22,6 +22,8 @@ public class HistoryMainPage implements Initializable {
 
     @FXML
     private Button clear;
+    @FXML
+    private Rectangle graphPage;
 
     @FXML
     private Text math;
@@ -29,6 +31,14 @@ public class HistoryMainPage implements Initializable {
     @FXML
     void setCalculatorPage(MouseEvent e) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("calculatorPage.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    void setGraphPage(MouseEvent e) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("graph.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         stage.setScene(scene);

@@ -144,7 +144,7 @@ public class CalculatorPage {
 
         SqlConnector sql =  new SqlConnector();
         String sqlCom = String.format("INSERT INTO calculator (input , output) VALUES ('%s','%s')",sb.toString(),String.valueOf(Calculator.calculate(sb.toString())));
-        //sql.ExecuteSQL(sqlCom);
+        sql.ExecuteSQL(sqlCom);
         String sqlCmd = "Select * FROM calculator";
         //sql.showDatabase(sqlCmd);
     }
@@ -578,4 +578,5 @@ public class CalculatorPage {
         stage.setScene(scene);
         stage.show();
     }
+
 }
